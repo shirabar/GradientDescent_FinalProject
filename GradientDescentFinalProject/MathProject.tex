@@ -190,7 +190,7 @@ The blur operator or the Gaussian operator is a two-dimensional convolution oper
 \centering
 \includegraphics[scale=0.3]{gf.PNG}
 \end{figure}
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{ISTA}
 The class of Iterative Shrinkage Thresholding Algorithms (ISTA) is an extension of the classical gradient algorithm. It is attractive due to its simplicity and thus is adequate for solving large-scale problems even with dense matrix data. \\
 \\Adopting this same gradient idea to the problem formulation (\ref{P:d4}) where the following assumptions are made:\\
@@ -211,13 +211,6 @@ The inequality is a result of the Cauchy Bunyakovsky Schwarz inequality, therefo
 \begin{theorem}
 Let $A$ be a symmetric $n\times n$ matrix, $\|A\|=max_j|\lambda_j|$ , where $\lambda_j$ are the eigenvalues of $A$.
 \end{theorem}
-%\begin{proof}
-%Let $A = QDQ^T$ for a diagonal matrix $D$ and an orthogonal matrix $Q$.
-%Note that $A$ and $D$ have the same eigenvalues and that $\|Qx\| = \|x\|$ for every $x$, 
-%and since $Q$ is regular, it follows that $max\{x^TAx : \|x\| = 1\} = max\{x^T Dx : \|x\| = 1\}$. Therefore, it suffices to show that $max\{x^T Dx : \|x\| = 1\}$  is the largest eigenvalue of $D$.
-% Let $d1 \geq d2 \geq . . . \geq dn$ be the diagonal entries of $D$, which are also its eigenvalues. 
- %Then $x^T Dx = \sum_{i=1}^{n} d_i x_i^2 \leq d1\sum_{i=1}^{n} x_i^2=d1\|x\|=d1$ for every $x$ such that $\|x_1\|= 1$, and $e_1^TDe_1 = d1$. 
-%\end{proof}
 \begin{proof}
 The norm of a matrix is defined as 
 $$\|A\| = \max_{\|u\| =1} \|Au\|.$$
@@ -247,7 +240,7 @@ under the constraint that $v$ is a unit vector (i.e., $\sum_i v_i^2=1$). The max
 \end{proof}\\
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \\$A^TA$ is a symmetric matrix, hence, the smallest Lipschitz constant of the gradient $ \nabla f$ is  $L(f) = 2\|A^TA\| = 2 \lambda_{max}(A^TA)$, where $\lambda_{max}$ is the maximal eigenvalue of $A^TA$.\\
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \\One of the methods for solving (\ref{P:d4}) is in the class of ISTA.
 The ISTA method which generates a sequence $\{x_k\}$ in this case would be:
 
@@ -280,9 +273,7 @@ where $L>0$ plays the role of a stepsize.\\
 \textbf{Initialize:} Take $x_0 \in \mathbb{R}^n$\\
 \textbf{Step k:} For each $k\geq 1$ compute $$x_k = p_L(x_{k-1}).$$
 \end{minipage}}
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{FISTA}
 A Fast Iterative Shrinkage-Thresholding Algorithm (FISTA) is an improvement of the ISTA method for solving the general problem (\ref{P:d4}).
 While FISTA keeps the simplicity of ISTA, the sequence ${x_k}$ that FISTA generates converges more quickly to a solution than other gradient methods.\\
@@ -307,7 +298,7 @@ clearly marginal.\\
     y_{k+1} = x_k + \left( \frac{t_k-1}{t_{k+1}} \right) .
 \end{equation}
 \end{minipage}}
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{Numerical experiments}
 In this section we illustrate an image deblurring problem. We estimate an image $\boldsymbol{x}$ from blurred image $\boldsymbol{b}$ using the iterative gradient descent algorithms ISTA and FISTA. We compare ISTA to FISTA and show the difference between the performance of those methods.\\
 Both methods were used  with a constant stepsize rule and applied once when 
