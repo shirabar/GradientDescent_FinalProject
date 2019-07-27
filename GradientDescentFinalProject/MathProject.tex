@@ -289,13 +289,13 @@ clearly marginal.\\
 \textbf{Initialize:} Take $y_1=x_0 \in \mathbb{R}^n,\;t_1=1$\\
 \textbf{Step k:} For each $k\geq 1$ compute 
 \begin{equation}
-    x_k = p_L(x_{k-1})
+    x_k = p_L(y_k)
 \end{equation}
 \begin{equation}\label{1}
     t_{k+1} = \frac{1+\sqrt{1+4t_k^2}}{2}
 \end{equation}
 \begin{equation}\label{2}
-    y_{k+1} = x_k + \left( \frac{t_k-1}{t_{k+1}} \right) .
+    y_{k+1} = x_k + \left( \frac{t_k-1}{t_{k+1}} \right)(x_k-x_{k-1}).
 \end{equation}
 \end{minipage}}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
