@@ -170,7 +170,7 @@ where $\| \cdot \|$ denotes the standard Euclidean norm and $L(f) > 0$ is the Li
 \\\textbf{Hyperplane:} A hyperplane in an $n$ dimensional Euclidean space, is a flat  $n-1$ dimensional subset of that space that divides the space into two disconnected parts.\\
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \\\textbf{Inner product:} The inner product of two vectors $\vec{a} = (a_1, a_2,..., a_n)$ and $\vec{b} = (b_1, b_2,..., b_n)$ is defined as:
-$$a \cdot b = a^T b =\sum_{i=1}^{n}a_i b_i = a_1b_1+a_2b_2+...+a_n b_n.$$
+$$\vec{a} \cdot \vec{b} = a^T b =\sum_{i=1}^{n}a_i b_i = a_1b_1+a_2b_2+...+a_n b_n.$$
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \\\textbf{Gradient:} The gradient of a scalar multivariable function $f(x_1, x_2,...,x_n)$ is denoted $\nabla f$, packages all its partial derivative information into a vector: $\nabla f(\vec{x}) = (\frac{\partial{f}}{\partial{x_1}},\frac{\partial{f}}{\partial{x_2}},...,\frac{\partial{f}}{\partial{x_n}})$.\\
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -262,7 +262,7 @@ $$= g(x) + \frac{L}{2} \left( \langle x-y,x-y \rangle + 2 \langle x-y, \frac{1}{
 $$= g(x) + \frac{L}{2} \left(\langle x-y + \frac{1}{L}\nabla f(y), x-y + \frac{1}{L}\nabla f(y)\rangle -  \langle \frac{1}{L}\nabla f(y),\frac{1}{L}\nabla f(y) \rangle \right) + f(y) =$$
 $$= g(x) + \frac{L}{2} \left \|x-y + \frac{1}{L}\nabla f(y)\right\|^2 - \frac{1}{2L} \left\|\nabla f(y)\right\| + f(y).$$
 ignoring constant terms in y
-$$p_L (y) = \argmin_{x} \left\{g(x) + \frac{L}{2} \left\| x-\left(y-\dfrac{1}{L}\nabla f(y)\right)\right\|^2\right\}.$$
+$$p_L (y) = \argmin_{x} \left\{g(x) + \frac{L}{2} \left\| x-\left(y-\frac{1}{L}\nabla f(y)\right)\right\|^2\right\}.$$
 Then, the gradient algorithm ISTA generates a sequence $\{x_k\}$ via
 
 $$ x_0 \in \mathbb{R}^n,\; x_k =p_L(x_{k-1}),$$
